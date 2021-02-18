@@ -37,7 +37,7 @@ class UserController extends Controller
        
         // if validation success then create an input array
         $inputArray      =           array(
-            'username'=> $request->username,
+            'username'=> $request->txt_username,
             'name'        =>      $request->name,
             'email'         =>      $request->email,
             'password'          =>      Hash::make($request->password),
@@ -212,6 +212,7 @@ public function logout(Request $request ) {
     
 public function show(request $request,$id)
 {
+    // dd($request);
     $crud= User::find($id);  
    
     return view('listpage', compact('crud'));  
@@ -219,10 +220,14 @@ public function show(request $request,$id)
 
 }
 
-public function destroy($id)  
+public function destroy(request $request,$id)  
     {  
-        $crud=Crud::find($id);  
-        $crud->delete();  
+    //  dd($request);
+        $student = User::find($id);
+        
+        $student->delete();
+        
+        return redirect ('registration');
     } 
 
 

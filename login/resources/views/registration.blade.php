@@ -66,7 +66,7 @@
 <div class="col-md-6">
 <div class="form-group">
                             <label for="phone"> username</label>
-                            <input type="text" id="txt_username" name="txt_username" class="form-control" placeholder="Enter Username" />
+                            <input type="text" id="txt_username" name="txt_username"  placeholder="Enter Username" />
    <!-- Response -->
    <span id="error_email"></span>
                            

@@ -15,6 +15,7 @@ use  App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('master');
+   
 });
 
 
@@ -68,4 +69,5 @@ Route::get('/listpage/{pbcid}', 'App\Http\Controllers\UserController@show');
 
 Route::view('listpage','listpage');
 
-Route::post('/destroy/{id}','App\Http\Controllers\UserController@destroy');
+// Route::get('/delete/{id}/destroy','App\Http\Controllers\UserController@destroy');
+Route::delete('/task/{task}', 'App\Http\Controllers\UserController@destroy');
